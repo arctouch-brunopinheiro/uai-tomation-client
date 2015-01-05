@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'UaiTomationClient' do
+
+end
+
+target 'UaiTomationClientTests' do
+
+end
+
