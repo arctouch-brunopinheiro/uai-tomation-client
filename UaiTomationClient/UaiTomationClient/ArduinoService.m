@@ -10,6 +10,8 @@
 
 #import <AFNetworking.h>
 
+#define URL_FORMAT(_serverAddress, _command) [NSString stringWithFormat:@"http://%@/?%@", _serverAddress, _command]
+
 @interface ArduinoService ()
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
@@ -43,37 +45,22 @@
     return self;
 }
 
-- (void)fetchCurrentStatsWithSuccess:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
-    
-    [self.manager GET:@"http://example.com/stats.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        success(responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        failure(error);
-        
-    }];
-}
-
 - (void)setAirConditionerState:(DeviceState)deviceState success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
     
-    NSUInteger deviceStateValue;
+    NSString *deviceStateValue;
     
     switch (deviceState) {
         case DeviceStateOn:
-            deviceStateValue = 1;
+            deviceStateValue = @"On";
             break;
         case DeviceStateOff:
-            deviceStateValue = 0;
-            break;
-        default:
-            deviceStateValue = -1;
+            deviceStateValue = @"Off";
             break;
     }
     
-    NSDictionary *parameters = @{@"status": @(deviceStateValue).stringValue};
+    NSString *requestUrl = URL_FORMAT(self.serverAddress, deviceStateValue);
     
-    [self.manager POST:@"http://example.com/resources.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.manager GET:requestUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

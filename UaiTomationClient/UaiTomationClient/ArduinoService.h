@@ -12,9 +12,8 @@ typedef void(^ArduinoRequestSuccess)(NSDictionary *stats);
 typedef void(^ArduinoRequestFailure)(NSError *error);
 
 typedef NS_ENUM(NSInteger, DeviceState) {
-    DeviceStateUnknown = -1,
-    DeviceStateOff = 0,
-    DeviceStateOn = 1
+    DeviceStateOn,
+    DeviceStateOff
 };
 
 @interface ArduinoService : NSObject
@@ -22,7 +21,6 @@ typedef NS_ENUM(NSInteger, DeviceState) {
 @property (nonatomic, strong) NSString *serverAddress;
 
 + (instancetype)sharedInstance;
-- (void)fetchCurrentStatsWithSuccess:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure;
 
 #pragma mark - Door Lock
 
@@ -31,6 +29,6 @@ typedef NS_ENUM(NSInteger, DeviceState) {
 #pragma mark - Air Conditioner
 
 - (void)setAirConditionerState:(DeviceState)deviceState success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure;
-- (void)setAirConditionerTemperature:(NSUInteger)temperature WithSuccess:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure;
+- (void)setAirConditionerTemperature:(NSUInteger)temperature success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure;
 
 @end
