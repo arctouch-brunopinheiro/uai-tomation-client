@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AE0FA98C1A5ACD9600572354 /* ArduinoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FA98B1A5ACD9600572354 /* ArduinoTableViewController.m */; };
+		AE0FA98F1A5AF61F00572354 /* ArduinoService.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FA98E1A5AF61F00572354 /* ArduinoService.m */; };
 		AE27FD9F1A5ACAC400A50653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE27FD9E1A5ACAC400A50653 /* Main.storyboard */; };
 		AEB2281F1A5ABFDC0090F569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB2281E1A5ABFDC0090F569 /* main.m */; };
 		AEB228221A5ABFDC0090F569 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB228211A5ABFDC0090F569 /* AppDelegate.m */; };
 		AEB2282A1A5ABFDC0090F569 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB228291A5ABFDC0090F569 /* Images.xcassets */; };
 		AEB2282D1A5ABFDC0090F569 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB2282B1A5ABFDC0090F569 /* LaunchScreen.xib */; };
 		AEB228391A5ABFDD0090F569 /* UaiTomationClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB228381A5ABFDD0090F569 /* UaiTomationClientTests.m */; };
+		E556A227E748324BFC345056 /* libPods-UaiTomationClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB95C884C18132AE21BBB9F0 /* libPods-UaiTomationClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2B78B0AD8CBB06E13B643FF /* Pods-UaiTomationClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UaiTomationClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-UaiTomationClient/Pods-UaiTomationClient.release.xcconfig"; sourceTree = "<group>"; };
 		AE0FA98A1A5ACD9600572354 /* ArduinoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArduinoTableViewController.h; sourceTree = "<group>"; };
 		AE0FA98B1A5ACD9600572354 /* ArduinoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArduinoTableViewController.m; sourceTree = "<group>"; };
+		AE0FA98D1A5AF61F00572354 /* ArduinoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArduinoService.h; sourceTree = "<group>"; };
+		AE0FA98E1A5AF61F00572354 /* ArduinoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArduinoService.m; sourceTree = "<group>"; };
 		AE27FD9E1A5ACAC400A50653 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AEB228191A5ABFDC0090F569 /* UaiTomationClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UaiTomationClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB2281D1A5ABFDC0090F569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +45,8 @@
 		AEB228321A5ABFDD0090F569 /* UaiTomationClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UaiTomationClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB228371A5ABFDD0090F569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB228381A5ABFDD0090F569 /* UaiTomationClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UaiTomationClientTests.m; sourceTree = "<group>"; };
+		CAC1ABC40742910CF492134D /* Pods-UaiTomationClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UaiTomationClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UaiTomationClient/Pods-UaiTomationClient.debug.xcconfig"; sourceTree = "<group>"; };
+		EB95C884C18132AE21BBB9F0 /* libPods-UaiTomationClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UaiTomationClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E556A227E748324BFC345056 /* libPods-UaiTomationClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150852F41F64810E7C0FFB05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1ABC40742910CF492134D /* Pods-UaiTomationClient.debug.xcconfig */,
+				A2B78B0AD8CBB06E13B643FF /* Pods-UaiTomationClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AEB228101A5ABFDC0090F569 = {
 			isa = PBXGroup;
 			children = (
 				AEB2281B1A5ABFDC0090F569 /* UaiTomationClient */,
 				AEB228351A5ABFDD0090F569 /* UaiTomationClientTests */,
 				AEB2281A1A5ABFDC0090F569 /* Products */,
+				150852F41F64810E7C0FFB05 /* Pods */,
+				B8249087EF7A3047AAE2D81F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +108,8 @@
 				AEB2282B1A5ABFDC0090F569 /* LaunchScreen.xib */,
 				AEB228291A5ABFDC0090F569 /* Images.xcassets */,
 				AEB2281C1A5ABFDC0090F569 /* Supporting Files */,
+				AE0FA98D1A5AF61F00572354 /* ArduinoService.h */,
+				AE0FA98E1A5AF61F00572354 /* ArduinoService.m */,
 			);
 			path = UaiTomationClient;
 			sourceTree = "<group>";
@@ -119,6 +140,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B8249087EF7A3047AAE2D81F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB95C884C18132AE21BBB9F0 /* libPods-UaiTomationClient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEB2283C1A5ABFDD0090F569 /* Build configuration list for PBXNativeTarget "UaiTomationClient" */;
 			buildPhases = (
+				2D0F760C462F1F7A0CB7ECF6 /* Check Pods Manifest.lock */,
 				AEB228151A5ABFDC0090F569 /* Sources */,
 				AEB228161A5ABFDC0090F569 /* Frameworks */,
 				AEB228171A5ABFDC0090F569 /* Resources */,
+				C471E4C0E3BEA785F8762560 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,12 +245,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D0F760C462F1F7A0CB7ECF6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C471E4C0E3BEA785F8762560 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UaiTomationClient/Pods-UaiTomationClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AEB228151A5ABFDC0090F569 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AEB228221A5ABFDC0090F569 /* AppDelegate.m in Sources */,
+				AE0FA98F1A5AF61F00572354 /* ArduinoService.m in Sources */,
 				AE0FA98C1A5ACD9600572354 /* ArduinoTableViewController.m in Sources */,
 				AEB2281F1A5ABFDC0090F569 /* main.m in Sources */,
 			);
@@ -335,6 +400,7 @@
 		};
 		AEB2283D1A5ABFDD0090F569 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAC1ABC40742910CF492134D /* Pods-UaiTomationClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UaiTomationClient/Info.plist;
@@ -345,6 +411,7 @@
 		};
 		AEB2283E1A5ABFDD0090F569 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B78B0AD8CBB06E13B643FF /* Pods-UaiTomationClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UaiTomationClient/Info.plist;
