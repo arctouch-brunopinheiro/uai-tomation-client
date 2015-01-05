@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0FA98C1A5ACD9600572354 /* ArduinoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FA98B1A5ACD9600572354 /* ArduinoTableViewController.m */; };
+		AE27FD9F1A5ACAC400A50653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE27FD9E1A5ACAC400A50653 /* Main.storyboard */; };
 		AEB2281F1A5ABFDC0090F569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB2281E1A5ABFDC0090F569 /* main.m */; };
 		AEB228221A5ABFDC0090F569 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB228211A5ABFDC0090F569 /* AppDelegate.m */; };
-		AEB228251A5ABFDC0090F569 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB228241A5ABFDC0090F569 /* ViewController.m */; };
-		AEB228281A5ABFDC0090F569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB228261A5ABFDC0090F569 /* Main.storyboard */; };
 		AEB2282A1A5ABFDC0090F569 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB228291A5ABFDC0090F569 /* Images.xcassets */; };
 		AEB2282D1A5ABFDC0090F569 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB2282B1A5ABFDC0090F569 /* LaunchScreen.xib */; };
 		AEB228391A5ABFDD0090F569 /* UaiTomationClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB228381A5ABFDD0090F569 /* UaiTomationClientTests.m */; };
@@ -27,14 +27,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE0FA98A1A5ACD9600572354 /* ArduinoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArduinoTableViewController.h; sourceTree = "<group>"; };
+		AE0FA98B1A5ACD9600572354 /* ArduinoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArduinoTableViewController.m; sourceTree = "<group>"; };
+		AE27FD9E1A5ACAC400A50653 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AEB228191A5ABFDC0090F569 /* UaiTomationClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UaiTomationClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB2281D1A5ABFDC0090F569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB2281E1A5ABFDC0090F569 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEB228201A5ABFDC0090F569 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AEB228211A5ABFDC0090F569 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AEB228231A5ABFDC0090F569 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AEB228241A5ABFDC0090F569 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AEB228271A5ABFDC0090F569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEB228291A5ABFDC0090F569 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AEB2282C1A5ABFDC0090F569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AEB228321A5ABFDD0090F569 /* UaiTomationClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UaiTomationClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,11 +83,11 @@
 			children = (
 				AEB228201A5ABFDC0090F569 /* AppDelegate.h */,
 				AEB228211A5ABFDC0090F569 /* AppDelegate.m */,
-				AEB228231A5ABFDC0090F569 /* ViewController.h */,
-				AEB228241A5ABFDC0090F569 /* ViewController.m */,
-				AEB228261A5ABFDC0090F569 /* Main.storyboard */,
-				AEB228291A5ABFDC0090F569 /* Images.xcassets */,
+				AE0FA98A1A5ACD9600572354 /* ArduinoTableViewController.h */,
+				AE0FA98B1A5ACD9600572354 /* ArduinoTableViewController.m */,
+				AE27FD9E1A5ACAC400A50653 /* Main.storyboard */,
 				AEB2282B1A5ABFDC0090F569 /* LaunchScreen.xib */,
+				AEB228291A5ABFDC0090F569 /* Images.xcassets */,
 				AEB2281C1A5ABFDC0090F569 /* Supporting Files */,
 			);
 			path = UaiTomationClient;
@@ -199,7 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB228281A5ABFDC0090F569 /* Main.storyboard in Resources */,
+				AE27FD9F1A5ACAC400A50653 /* Main.storyboard in Resources */,
 				AEB2282D1A5ABFDC0090F569 /* LaunchScreen.xib in Resources */,
 				AEB2282A1A5ABFDC0090F569 /* Images.xcassets in Resources */,
 			);
@@ -219,8 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB228251A5ABFDC0090F569 /* ViewController.m in Sources */,
 				AEB228221A5ABFDC0090F569 /* AppDelegate.m in Sources */,
+				AE0FA98C1A5ACD9600572354 /* ArduinoTableViewController.m in Sources */,
 				AEB2281F1A5ABFDC0090F569 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +244,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AEB228261A5ABFDC0090F569 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEB228271A5ABFDC0090F569 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AEB2282B1A5ABFDC0090F569 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -414,6 +406,7 @@
 				AEB2283E1A5ABFDD0090F569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEB2283F1A5ABFDD0090F569 /* Build configuration list for PBXNativeTarget "UaiTomationClientTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +415,7 @@
 				AEB228411A5ABFDD0090F569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ArduinoTableViewController.h
 //  UaiTomationClient
 //
 //  Created by Bruno Pinheiro on 1/5/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ArduinoTableViewController : UITableViewController
 
 @end
-

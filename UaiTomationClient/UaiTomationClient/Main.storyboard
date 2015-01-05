@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2hA-Qh-sCj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Arduino Table View Controller-->
+        <scene sceneID="IyA-aY-sKd">
+            <objects>
+                <tableViewController id="2hA-Qh-sCj" customClass="ArduinoTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XTS-IU-wRH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Door Lock" id="LvI-PO-Aqq">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iYi-Ru-IPw">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iYi-Ru-IPw" id="ZfV-s5-gWK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On/Off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ8-SG-dKT">
+                                                    <rect key="frame" x="8" y="8" width="527" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNO-R9-TTT">
+                                                    <rect key="frame" x="543" y="8" width="51" height="27.5"/>
+                                                    <connections>
+                                                        <action selector="doorLockValueChanged:" destination="2hA-Qh-sCj" eventType="valueChanged" id="tn6-MR-CGy"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gNO-R9-TTT" firstAttribute="trailing" secondItem="ZfV-s5-gWK" secondAttribute="trailingMargin" id="1vM-fl-t4H"/>
+                                                <constraint firstItem="eJ8-SG-dKT" firstAttribute="leading" secondItem="ZfV-s5-gWK" secondAttribute="leadingMargin" id="S9W-gr-uxa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gNO-R9-TTT" secondAttribute="bottom" id="Yga-lq-4DI"/>
+                                                <constraint firstItem="gNO-R9-TTT" firstAttribute="leading" secondItem="eJ8-SG-dKT" secondAttribute="trailing" constant="8" symbolic="YES" id="dLS-zi-OcV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eJ8-SG-dKT" secondAttribute="bottom" id="eb9-nf-9fm"/>
+                                                <constraint firstItem="gNO-R9-TTT" firstAttribute="top" secondItem="ZfV-s5-gWK" secondAttribute="topMargin" id="nh6-QP-gbQ"/>
+                                                <constraint firstItem="eJ8-SG-dKT" firstAttribute="top" secondItem="ZfV-s5-gWK" secondAttribute="topMargin" id="v1C-a8-wip"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Air Conditioner " id="aiX-FM-jG3">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jbF-ml-3W8">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jbF-ml-3W8" id="rag-Qs-eWc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On/Off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhP-l4-MxD">
+                                                    <rect key="frame" x="8" y="8" width="527" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wdb-zX-aC4">
+                                                    <rect key="frame" x="543" y="8" width="51" height="27.5"/>
+                                                    <connections>
+                                                        <action selector="airConditionerOnStateChanged:" destination="2hA-Qh-sCj" eventType="valueChanged" id="BiV-Wo-lPF"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xhP-l4-MxD" secondAttribute="bottom" id="9v7-Ht-Odo"/>
+                                                <constraint firstItem="xhP-l4-MxD" firstAttribute="leading" secondItem="rag-Qs-eWc" secondAttribute="leadingMargin" id="Bsb-Bf-l6T"/>
+                                                <constraint firstItem="Wdb-zX-aC4" firstAttribute="leading" secondItem="xhP-l4-MxD" secondAttribute="trailing" constant="8" symbolic="YES" id="VjB-1R-CbV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wdb-zX-aC4" secondAttribute="bottom" id="Wkm-B6-Gsk"/>
+                                                <constraint firstItem="Wdb-zX-aC4" firstAttribute="top" secondItem="rag-Qs-eWc" secondAttribute="topMargin" id="eov-pw-OL5"/>
+                                                <constraint firstItem="xhP-l4-MxD" firstAttribute="top" secondItem="rag-Qs-eWc" secondAttribute="topMargin" id="ftc-x7-vgn"/>
+                                                <constraint firstItem="Wdb-zX-aC4" firstAttribute="trailing" secondItem="rag-Qs-eWc" secondAttribute="trailingMargin" id="gOG-4Q-6x5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3J8-Wd-TT5">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3J8-Wd-TT5" id="XmB-w8-MGF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21ºC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jez-bY-w4h">
+                                                    <rect key="frame" x="8" y="8" width="490" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minimumValue="17" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="ppg-pb-2KV">
+                                                    <rect key="frame" x="498" y="8" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="airConditionerTemperatureChanged:" destination="2hA-Qh-sCj" eventType="valueChanged" id="QOH-8A-jxC"/>
+                                                    </connections>
+                                                </stepper>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jez-bY-w4h" firstAttribute="top" secondItem="XmB-w8-MGF" secondAttribute="topMargin" id="4gk-L3-TOs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jez-bY-w4h" secondAttribute="bottom" id="CKI-wm-08C"/>
+                                                <constraint firstItem="jez-bY-w4h" firstAttribute="top" secondItem="XmB-w8-MGF" secondAttribute="topMargin" id="RLE-3M-lHo"/>
+                                                <constraint firstItem="jez-bY-w4h" firstAttribute="bottom" secondItem="XmB-w8-MGF" secondAttribute="bottomMargin" id="ado-1q-XXG"/>
+                                                <constraint firstItem="jez-bY-w4h" firstAttribute="leading" secondItem="XmB-w8-MGF" secondAttribute="leadingMargin" id="ah0-0U-KK3"/>
+                                                <constraint firstItem="ppg-pb-2KV" firstAttribute="top" secondItem="XmB-w8-MGF" secondAttribute="topMargin" id="c8q-6k-ILF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ppg-pb-2KV" secondAttribute="bottom" id="iBc-xX-OFM"/>
+                                                <constraint firstItem="ppg-pb-2KV" firstAttribute="leading" secondItem="jez-bY-w4h" secondAttribute="trailing" id="nul-xj-IIU"/>
+                                                <constraint firstItem="jez-bY-w4h" firstAttribute="leading" secondItem="XmB-w8-MGF" secondAttribute="leadingMargin" id="rV6-qB-9RD"/>
+                                                <constraint firstItem="ppg-pb-2KV" firstAttribute="trailing" secondItem="XmB-w8-MGF" secondAttribute="trailingMargin" id="z3O-q1-84T"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="2hA-Qh-sCj" id="3HQ-9V-svg"/>
+                            <outlet property="delegate" destination="2hA-Qh-sCj" id="WPx-Re-W4c"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="airConditionerOnStateLabel" destination="xhP-l4-MxD" id="YOe-b9-jRM"/>
+                        <outlet property="airConditionerTemperatureLabel" destination="jez-bY-w4h" id="xid-cg-1dY"/>
+                        <outlet property="doorLockStateLabel" destination="eJ8-SG-dKT" id="hT8-9Q-fWC"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Az8-3D-8Kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="375"/>
+        </scene>
+    </scenes>
+</document>
