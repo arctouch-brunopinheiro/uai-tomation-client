@@ -15,7 +15,7 @@
 @interface ArduinoService ()
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
-
+@property (assign, nonatomic) NSUInteger currentTemperature;
 
 @end
 
@@ -49,11 +49,10 @@
     return self;
 }
 
-- (void)setAirConditionerState:(DeviceState)deviceState success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
-    
-    NSString *deviceStateValue = [self stateAsString:deviceState];
-    
-    NSString *requestUrl = URL_FORMAT(self.serverAddress, deviceStateValue);
+#pragma mark - API Calls
+
+- (void)setAirConditionerTemperature:(NSUInteger)temperature success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
+    NSString *requestUrl = URL_FORMAT(self.serverAddress, @(temperature).stringValue);
     
     [self.manager GET:requestUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -64,32 +63,8 @@
     }];
 }
 
-- (void)setAirConditionerTemperature:(NSUInteger)temperature WithSuccess:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
-    NSDictionary *parameters = @{@"status": @(temperature).stringValue};
-    
-    [self.manager POST:@"http://example.com/resources.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        success(responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        failure(error);
-    }];
-}
-
-- (void)setAirConditionerWarm:(BOOL)warm success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
-    
-    NSString *requestUrl = URL_FORMAT(self.serverAddress, warm ? @"warm" : @"cold");
-    
-    [self.manager GET:requestUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        success(responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        failure(error);
-    }];
-}
-
-- (void)setDorLockState:(DeviceState)deviceState success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
+- (void)setAirConditionerState:(DeviceState)deviceState currentTemperature:(NSUInteger)temperature success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
+    self.currentTemperature = temperature;
     NSString *deviceStateValue = [self stateAsString:deviceState];
     
     NSString *requestUrl = URL_FORMAT(self.serverAddress, deviceStateValue);
@@ -109,7 +84,7 @@
     NSString *deviceStateValue;
     switch (deviceState) {
         case DeviceStateOn:
-            deviceStateValue = @"cold";
+            deviceStateValue = @(self.currentTemperature).stringValue;
             break;
         case DeviceStateOff:
             deviceStateValue = @"off";
