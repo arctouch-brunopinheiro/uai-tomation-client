@@ -41,6 +41,8 @@
     self = [super init];
     if (self) {
         _manager = [AFHTTPRequestOperationManager manager];
+        self.manager.responseSerializer = [AFCompoundResponseSerializer serializer];
+        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     }
     return self;
 }
