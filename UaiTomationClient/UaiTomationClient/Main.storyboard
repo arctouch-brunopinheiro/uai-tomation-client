@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2hA-Qh-sCj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -83,19 +84,25 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="224" id="wVC-rV-Drh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="347" id="wVC-rV-Drh">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wVC-rV-Drh" id="Jb8-0w-dnV">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Modes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV2-CP-DWP">
                                                     <rect key="frame" x="8" y="8" width="579" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="PyO-zH-iD0"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoW-kk-B1B" userLabel="BrunoMode">
-                                                    <rect key="frame" x="8" y="44" width="172" height="172"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoW-kk-B1B" userLabel="BrunoMode">
+                                                    <rect key="frame" x="8" y="44" width="288" height="271"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="YoW-kk-B1B" secondAttribute="height" multiplier="285:268" id="Pa8-Za-t4Z"/>
+                                                    </constraints>
                                                     <state key="normal" backgroundImage="brun">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -103,11 +110,19 @@
                                                         <action selector="brunoModeClicked:" destination="2hA-Qh-sCj" eventType="touchUpInside" id="i7a-HE-WRv"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-Qa-M3E" userLabel="MommMode">
-                                                    <rect key="frame" x="194" y="44" width="176" height="172"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-Qa-M3E" userLabel="MommMode">
+                                                    <rect key="frame" x="304" y="44" width="287.5" height="271"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aAk-Qa-M3E" secondAttribute="height" multiplier="44:43" id="mTv-KP-tSM"/>
+                                                    </constraints>
                                                     <state key="normal" backgroundImage="momm">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="mTv-KP-tSM"/>
+                                                        </mask>
+                                                    </variation>
                                                     <connections>
                                                         <action selector="mommModeClicked:" destination="2hA-Qh-sCj" eventType="touchUpInside" id="6mS-zs-v1X"/>
                                                     </connections>
@@ -118,15 +133,24 @@
                                                 <constraint firstItem="vV2-CP-DWP" firstAttribute="leading" secondItem="Jb8-0w-dnV" secondAttribute="leadingMargin" id="6zJ-3F-yd5"/>
                                                 <constraint firstItem="vV2-CP-DWP" firstAttribute="top" secondItem="Jb8-0w-dnV" secondAttribute="topMargin" id="CzA-ZP-fru"/>
                                                 <constraint firstItem="vV2-CP-DWP" firstAttribute="top" secondItem="Jb8-0w-dnV" secondAttribute="topMargin" id="DrW-zJ-o6E"/>
+                                                <constraint firstItem="YoW-kk-B1B" firstAttribute="width" secondItem="aAk-Qa-M3E" secondAttribute="width" id="Ix4-VG-Bxa"/>
+                                                <constraint firstItem="aAk-Qa-M3E" firstAttribute="top" secondItem="vV2-CP-DWP" secondAttribute="bottom" constant="8" id="MJV-of-33k"/>
+                                                <constraint firstItem="YoW-kk-B1B" firstAttribute="top" secondItem="vV2-CP-DWP" secondAttribute="bottom" constant="8" id="O89-9d-67b"/>
+                                                <constraint firstItem="YoW-kk-B1B" firstAttribute="leading" secondItem="Jb8-0w-dnV" secondAttribute="leadingMargin" id="SEY-A7-993"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aAk-Qa-M3E" secondAttribute="trailing" id="WAi-1y-87T"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aAk-Qa-M3E" secondAttribute="bottom" id="cVT-QX-bjT"/>
                                                 <constraint firstAttribute="centerX" secondItem="vV2-CP-DWP" secondAttribute="centerX" constant="2.5" id="eSf-UO-Uh5"/>
+                                                <constraint firstItem="YoW-kk-B1B" firstAttribute="height" secondItem="aAk-Qa-M3E" secondAttribute="height" id="fsZ-At-eEj"/>
                                                 <constraint firstItem="vV2-CP-DWP" firstAttribute="leading" secondItem="Jb8-0w-dnV" secondAttribute="leadingMargin" id="j4X-9b-oNo"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vV2-CP-DWP" secondAttribute="bottom" constant="180" id="l6G-MR-IHU"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="YoW-kk-B1B" secondAttribute="bottom" id="jLe-52-4t5"/>
+                                                <constraint firstItem="aAk-Qa-M3E" firstAttribute="leading" secondItem="YoW-kk-B1B" secondAttribute="trailing" constant="8" symbolic="YES" id="qvs-ck-LRM"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="1tm-jO-iMb"/>
                                                     <exclude reference="DrW-zJ-o6E"/>
                                                     <exclude reference="j4X-9b-oNo"/>
+                                                    <exclude reference="cVT-QX-bjT"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -149,7 +173,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Az8-3D-8Kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="375"/>
+            <point key="canvasLocation" x="310" y="374"/>
         </scene>
     </scenes>
     <resources>
