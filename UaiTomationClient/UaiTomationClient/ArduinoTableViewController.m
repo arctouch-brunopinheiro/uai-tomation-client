@@ -107,7 +107,7 @@ static NSUInteger const kMinTemperature = 16;
     int temperature = 22;
     [self updateTemperatureLabel:temperature];
     
-    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setAirConditionerTemperature:0 success:^(NSDictionary *stats) {
+    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setAirConditionerTemperature:99 success:^(NSDictionary *stats) {
         self.temperature = temperature;
     } failure:^(NSError *error) {
         NSString *errorMessage = [NSString stringWithFormat:@"Air conditioner state change failed with error: %@", error];
