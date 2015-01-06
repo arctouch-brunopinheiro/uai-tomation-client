@@ -9,7 +9,7 @@
 #import "ArduinoTableViewController.h"
 #import "ArduinoService.h"
 
-#define TemperatureStepperDefaultValue 13.0
+#define TemperatureStepperDefaultValue 21.0
 
 @interface ArduinoTableViewController ()
 
