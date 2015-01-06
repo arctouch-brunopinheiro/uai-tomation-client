@@ -92,10 +92,10 @@
     NSString *deviceStateValue;
     switch (deviceState) {
         case DeviceStateOn:
-            deviceStateValue = @"On";
+            deviceStateValue = @"cold";
             break;
         case DeviceStateOff:
-            deviceStateValue = @"Off";
+            deviceStateValue = @"off";
             break;
     }
     return deviceStateValue;
