@@ -10,7 +10,7 @@
 #import "ArduinoService.h"
 
 static NSUInteger const kMaxTemperature = 24;
-static NSUInteger const kMinTemperature = 20;
+static NSUInteger const kMinTemperature = 16;
 
 @interface ArduinoTableViewController ()
 
@@ -76,4 +76,31 @@ static NSUInteger const kMinTemperature = 20;
     }];
 }
 
+- (IBAction)brunoModeClicked:(UIButton *)sender {
+    int temperature = 16;
+    [self updateTemperatureLabel:temperature];
+    
+    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setAirConditionerTemperature:temperature success:^(NSDictionary *stats) {
+        self.temperature = temperature;
+    } failure:^(NSError *error) {
+        NSString *errorMessage = [NSString stringWithFormat:@"Air conditioner state change failed with error: %@", error];
+        NSLog(@"%@", errorMessage);
+        [[[UIAlertView alloc] initWithTitle:@"Command failed" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [self updateTemperatureLabel:self.temperature];
+    }];
+}
+
+- (IBAction)mommModeClicked:(UIButton *)sender {
+    int temperature = 32;
+    [self updateTemperatureLabel:temperature];
+    
+    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setAirConditionerTemperature:temperature success:^(NSDictionary *stats) {
+        self.temperature = temperature;
+    } failure:^(NSError *error) {
+        NSString *errorMessage = [NSString stringWithFormat:@"Air conditioner state change failed with error: %@", error];
+        NSLog(@"%@", errorMessage);
+        [[[UIAlertView alloc] initWithTitle:@"Command failed" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [self updateTemperatureLabel:self.temperature];
+    }];
+}
 @end
