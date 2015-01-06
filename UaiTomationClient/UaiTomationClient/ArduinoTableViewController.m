@@ -23,6 +23,11 @@
 
 @implementation ArduinoTableViewController
 
+- (void)viewDidLoad {
+    self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+    self.tableView.scrollEnabled = NO;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     self.airConditionerTemperatureStepper.value = TemperatureStepperDefaultValue;
 }
