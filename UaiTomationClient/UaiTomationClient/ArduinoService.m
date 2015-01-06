@@ -47,16 +47,7 @@
 
 - (void)setAirConditionerState:(DeviceState)deviceState success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
     
-    NSString *deviceStateValue;
-    
-    switch (deviceState) {
-        case DeviceStateOn:
-            deviceStateValue = @"On";
-            break;
-        case DeviceStateOff:
-            deviceStateValue = @"Off";
-            break;
-    }
+    NSString *deviceStateValue = [self stateAsString:deviceState];
     
     NSString *requestUrl = URL_FORMAT(self.serverAddress, deviceStateValue);
     
@@ -79,6 +70,35 @@
         NSLog(@"Error: %@", error);
         failure(error);
     }];
+}
+
+- (void)setDorLockState:(DeviceState)deviceState success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure {
+    NSString *deviceStateValue = [self stateAsString:deviceState];
+    
+    NSString *requestUrl = URL_FORMAT(self.serverAddress, deviceStateValue);
+    
+    [self.manager GET:requestUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        success(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        failure(error);
+    }];
+}
+
+#pragma mark - Utilities
+
+- (NSString *)stateAsString:(DeviceState)deviceState {
+    NSString *deviceStateValue;
+    switch (deviceState) {
+        case DeviceStateOn:
+            deviceStateValue = @"On";
+            break;
+        case DeviceStateOff:
+            deviceStateValue = @"Off";
+            break;
+    }
+    return deviceStateValue;
 }
 
 @end

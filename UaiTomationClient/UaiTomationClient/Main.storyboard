@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server Address" textAlignment="center" minimumFontSize="17" id="Shf-oi-9EL">
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.40.121" borderStyle="roundedRect" placeholder="Server Address" textAlignment="center" minimumFontSize="17" id="Shf-oi-9EL">
                             <rect key="frame" x="0.0" y="-30" width="600" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -124,6 +124,7 @@
                             <outlet property="delegate" destination="2hA-Qh-sCj" id="WPx-Re-W4c"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="airConditionerOnStateLabel" destination="xhP-l4-MxD" id="YOe-b9-jRM"/>
                         <outlet property="airConditionerTemperatureLabel" destination="jez-bY-w4h" id="xid-cg-1dY"/>
