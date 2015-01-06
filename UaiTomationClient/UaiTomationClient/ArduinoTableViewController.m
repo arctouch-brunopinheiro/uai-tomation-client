@@ -9,16 +9,23 @@
 #import "ArduinoTableViewController.h"
 #import "ArduinoService.h"
 
+#define TemperatureStepperDefaultValue 13.0
+
 @interface ArduinoTableViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *serverAddres;
+@property (weak, nonatomic) IBOutlet UITextField *serverAddress;
 @property (weak, nonatomic) IBOutlet UILabel *doorLockStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *airConditionerOnStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *airConditionerTemperatureLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *airConditionerTemperatureStepper;
 
 @end
 
 @implementation ArduinoTableViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.airConditionerTemperatureStepper.value = TemperatureStepperDefaultValue;
+}
 
 - (IBAction)doorLockValueChanged:(UISwitch *)sender {
     NSString *oldValue = self.airConditionerTemperatureLabel.text;
@@ -27,7 +34,7 @@
     
     DeviceState state = sender.isOn ? DeviceStateOn : DeviceStateOff;
     
-    [[ArduinoService sharedInstance] setDorLockState:state success:^(NSDictionary *stats) {
+    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setDorLockState:state success:^(NSDictionary *stats) {
         NSLog(@"Door lock state changed successfuly");
     } failure:^(NSError *error) {
         NSString *errorMessage = [NSString stringWithFormat:@"Air conditioner state change failed with error: %@", error];
@@ -45,7 +52,7 @@
   
     DeviceState state = sender.isOn ? DeviceStateOn : DeviceStateOff;
     
-    [[ArduinoService sharedInstance] setAirConditionerState:state success:^(NSDictionary *stats) {
+    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setAirConditionerState:state success:^(NSDictionary *stats) {
         NSLog(@"Air conditioner state changed successfuly");
     } failure:^(NSError *error) {
         NSString *errorMessage = [NSString stringWithFormat:@"Air conditioner state change failed with error: %@", error];
@@ -59,9 +66,12 @@
 - (IBAction)airConditionerTemperatureChanged:(UIStepper *)sender {
     NSString *oldValue = self.airConditionerTemperatureLabel.text;
     
-    self.airConditionerTemperatureLabel.text = [NSString stringWithFormat:@"%.0lfºC", sender.value];
+//    self.airConditionerTemperatureLabel.text = [NSString stringWithFormat:@"%.0lfºC", sender.value];
     
-    [[ArduinoService sharedInstance] setAirConditionerTemperature:sender.value success:^(NSDictionary *stats) {
+    BOOL temperatureIncreased = sender.value > TemperatureStepperDefaultValue;
+    sender.value = TemperatureStepperDefaultValue;
+    
+    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setAirConditionerWarm:temperatureIncreased success:^(NSDictionary *stats) {
         NSLog(@"Air conditioner state changed successfuly");
     } failure:^(NSError *error) {
         NSString *errorMessage = [NSString stringWithFormat:@"Air conditioner state change failed with error: %@", error];
@@ -71,5 +81,6 @@
         self.airConditionerTemperatureLabel.text = oldValue;
     }];
 }
+
 
 @end

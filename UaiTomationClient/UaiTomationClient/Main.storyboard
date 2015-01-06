@@ -89,7 +89,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3J8-Wd-TT5" id="XmB-w8-MGF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21ºC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jez-bY-w4h">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jez-bY-w4h">
                                                     <rect key="frame" x="8" y="8" width="490" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -128,8 +128,9 @@
                     <connections>
                         <outlet property="airConditionerOnStateLabel" destination="xhP-l4-MxD" id="YOe-b9-jRM"/>
                         <outlet property="airConditionerTemperatureLabel" destination="jez-bY-w4h" id="xid-cg-1dY"/>
+                        <outlet property="airConditionerTemperatureStepper" destination="ppg-pb-2KV" id="rvZ-de-f3j"/>
                         <outlet property="doorLockStateLabel" destination="eJ8-SG-dKT" id="hT8-9Q-fWC"/>
-                        <outlet property="serverAddres" destination="XTS-IU-wRH" id="nLc-rg-kAg"/>
+                        <outlet property="serverAddress" destination="Shf-oi-9EL" id="gv8-F7-9M3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Az8-3D-8Kt" userLabel="First Responder" sceneMemberID="firstResponder"/>

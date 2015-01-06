@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, DeviceState) {
 
 @property (nonatomic, strong) NSString *serverAddress;
 
-+ (instancetype)sharedInstance;
++ (instancetype)sharedInstanceWithServerAddress:(NSString *)serverAddress;
 
 #pragma mark - Door Lock
 
@@ -30,5 +30,6 @@ typedef NS_ENUM(NSInteger, DeviceState) {
 
 - (void)setAirConditionerState:(DeviceState)deviceState success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure;
 - (void)setAirConditionerTemperature:(NSUInteger)temperature success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure;
+- (void)setAirConditionerWarm:(BOOL)warm success:(ArduinoRequestSuccess)success failure:(ArduinoRequestFailure)failure;
 
 @end
