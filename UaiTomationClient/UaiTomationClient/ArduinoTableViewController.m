@@ -10,7 +10,7 @@
 #import "ArduinoService.h"
 
 static NSUInteger const kMaxTemperature = 24;
-static NSUInteger const kMinTemperature = 20;
+static NSUInteger const kMinTemperature = 16;
 
 @interface ArduinoTableViewController ()
 
