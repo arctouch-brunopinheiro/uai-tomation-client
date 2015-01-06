@@ -103,4 +103,17 @@ static NSUInteger const kMinTemperature = 16;
         [self updateTemperatureLabel:self.temperature];
     }];
 }
+- (IBAction)goodForEverybodyClicked:(UIButton *)sender {
+    int temperature = 22;
+    [self updateTemperatureLabel:temperature];
+    
+    [[ArduinoService sharedInstanceWithServerAddress:self.serverAddress.text] setAirConditionerTemperature:0 success:^(NSDictionary *stats) {
+        self.temperature = temperature;
+    } failure:^(NSError *error) {
+        NSString *errorMessage = [NSString stringWithFormat:@"Air conditioner state change failed with error: %@", error];
+        NSLog(@"%@", errorMessage);
+        [[[UIAlertView alloc] initWithTitle:@"Command failed" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [self updateTemperatureLabel:self.temperature];
+    }];
+}
 @end
